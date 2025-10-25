@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alchemist - Creaking Cove</title>
+    <link rel="stylesheet" href="master-styles.css">
+    <link rel="stylesheet" href="overview-styles.css">
+</head>
+<body class="overview-page" data-class="alchemist">
+    
+    <div class="overview-container">
+        
+        <!-- Hero Section with Picture Frame -->
+        <div class="class-hero">
+            <div class="hero-picture-frame">
+                <img src="alchemist-hero.png" alt="Alchemist" class="hero-image">
+                <div class="frame-border"></div>
+                <div class="frame-glow"></div>
+            </div>
+            
+            <div class="hero-info">
+                <h1 class="class-title">ALCHEMIST</h1>
+                <p class="class-subtitle">Arcane Destroyer • Master of Forbidden Magic</p>
+                
+                <div class="base-stats">
+                    <div class="stat-group">
+                        <span class="stat-label">Starting HP</span>
+                        <span class="stat-value">85</span>
+                    </div>
+                    <div class="stat-group">
+                        <span class="stat-label">Starting SE</span>
+                        <span class="stat-value">130</span>
+                    </div>
+                    <div class="stat-group">
+                        <span class="stat-label">Max HP (60)</span>
+                        <span class="stat-value">734</span>
+                    </div>
+                    <div class="stat-group">
+                        <span class="stat-label">Max SE (60)</span>
+                        <span class="stat-value">720</span>
+                    </div>
+                </div>
+                
+                <div class="unique-stat-box">
+                    <span class="unique-label">Unique Stat</span>
+                    <span class="unique-name">INTELLECT</span>
+                    <p class="unique-desc">Unlocks at Level 15 • Amplifies spell damage and SE regeneration</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Class Description -->
+        <div class="class-description-section">
+            <p class="class-description">
+                The Alchemist is a master of arcane forces and forbidden magic, excelling as a ranged 
+                spellcaster specializing in burst damage and manipulation. Beginning as an experimental 
+                scholar blending science and magic, they evolve through disciplined elemental mastery, 
+                dark warlock pacts, and ultimately become hemomancers manipulating life force itself. 
+                The Alchemist line dominates through overwhelming spell power but requires careful 
+                positioning due to fragility.
+            </p>
+        </div>
+        
+        <!-- Evolution Timeline -->
+        <div class="evolution-timeline">
+            <h2 class="section-title">Evolution Path</h2>
+            
+            <div class="timeline-track">
+                <div class="timeline-node" data-tier="1" onclick="location.href='alchemist-t1.html'">
+                    <div class="node-circle">
+                        <span class="node-icon">1</span>
+                    </div>
+                    <div class="node-content">
+                        <h3 class="node-title">Alchemist</h3>
+                        <p class="node-levels">Levels 1-14</p>
+                        <p class="node-desc">Experimental scholar blending science and forbidden magic into volatile concoctions.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-connector"></div>
+                
+                <div class="timeline-node" data-tier="2" onclick="location.href='alchemist-t2.html'">
+                    <div class="node-circle">
+                        <span class="node-icon">2</span>
+                    </div>
+                    <div class="node-content">
+                        <h3 class="node-title">Mage</h3>
+                        <p class="node-levels">Levels 15-29</p>
+                        <p class="node-desc">Elemental master commanding arcane forces with disciplined precision.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-connector"></div>
+                
+                <div class="timeline-node" data-tier="3" onclick="location.href='alchemist-t3.html'">
+                    <div class="node-circle">
+                        <span class="node-icon">3</span>
+                    </div>
+                    <div class="node-content">
+                        <h3 class="node-title">Warlock</h3>
+                        <p class="node-levels">Levels 30-44</p>
+                        <p class="node-desc">Dark pact wielder channeling demonic forces through blood magic.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-connector"></div>
+                
+                <div class="timeline-node" data-tier="4" onclick="location.href='alchemist-t4.html'">
+                    <div class="node-circle">
+                        <span class="node-icon">4</span>
+                    </div>
+                    <div class="node-content">
+                        <h3 class="node-title">Hemomancer</h3>
+                        <p class="node-levels">Levels 45-60</p>
+                        <p class="node-desc">Blood sorcery perfected—manipulate vitality itself through crimson arts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <p class="cta-text">Select a tier above to explore abilities, passives, and playstyle details!</p>
+        </div>
+        
+    </div>
+    
+    <button class="back-button" onclick="location.href='classes-v2.html'">← Back to Class Selection</button>
+    
+</body>
+</html>

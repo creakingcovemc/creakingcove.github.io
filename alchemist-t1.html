@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alchemist (Tier 1) - Creaking Cove</title>
+    <link rel="stylesheet" href="master-styles.css">
+    <link rel="stylesheet" href="tier-detail-styles.css">
+</head>
+<body class="tier-detail-page" data-class="alchemist">
+    
+    <div class="tier-container">
+        
+        <div class="tier-header">
+            <h1 class="tier-title" style="background: linear-gradient(135deg, #ef4444, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">ALCHEMIST</h1>
+            <p class="tier-level-range">Tier 1 • Levels 1-14</p>
+            <p class="tier-description">Experimental scholar. Blend science and forbidden magic into volatile concoctions. Raw power at the cost of stability.</p>
+        </div>
+        
+        <div class="stats-display">
+            <div class="stat-item">
+                <span class="stat-name">HP</span>
+                <span class="stat-progression">85 → 236</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-name">SE</span>
+                <span class="stat-progression">130 → 202</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-name">Power</span>
+                <span class="stat-progression">15 → 43.4</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-name">Resilience</span>
+                <span class="stat-progression">3 → 23</span>
+            </div>
+        </div>
+        
+        <div class="abilities-section">
+            <h2 class="section-heading">✨ Abilities</h2>
+            
+            <div class="abilities-grid">
+                
+                <!-- Ability 1 -->
+                <div class="ability-card" onmouseenter="showTooltip(event, this)" onmousemove="updateTooltipPosition(event, this)" onmouseleave="hideTooltip(this)">
+                    <div class="ability-icon-svg">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" stroke="#ef4444" stroke-width="3" fill="none"/>
+                            <path d="M24 14 L24 34 M14 24 L34 24" stroke="#ef4444" stroke-width="3"/>
+                            <circle cx="24" cy="24" r="4" fill="#ef4444"/>
+                        </svg>
+                    </div>
+                    <div class="ability-name-display">Arcane Bolt</div>
+                    <div class="ability-unlock-level">Level 1</div>
+                    
+                    <div class="ability-tooltip">
+                        <div class="tooltip-header">
+                            <h3 class="tooltip-title">ARCANE BOLT</h3>
+                            <p class="tooltip-unlock">Unlocks: Level 1</p>
+                        </div>
+                        <div class="tooltip-stats">
+                            <span class="tooltip-badge">Cost: 15 SE</span>
+                            <span class="tooltip-badge">Cooldown: 2s</span>
+                            <span class="tooltip-badge">Type: Basic Attack</span>
+                            <span class="tooltip-badge">Range: 30 blocks</span>
+                        </div>
+                        <div class="tooltip-section">
+                            <h4 class="tooltip-section-title">What It Does:</h4>
+                            <p class="tooltip-section-text">Deal <strong>120% Power</strong> as magic damage to target enemy. Generate <strong>6 SE</strong> on hit.</p>
+                        </div>
+                        <div class="tooltip-section">
+                            <h4 class="tooltip-section-title">How To Use:</h4>
+                            <p class="tooltip-section-text">Target an enemy and cast. Fires a magical projectile that tracks the target. Your basic spamming ability to generate Soul Energy.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ability 2 -->
+                <div class="ability-card" onmouseenter="showTooltip(event, this)" onmousemove="updateTooltipPosition(event, this)" onmouseleave="hideTooltip(this)">
+                    <div class="ability-icon-svg">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 8 L28 18 L38 20 L30 28 L32 38 L24 32 L16 38 L18 28 L10 20 L20 18 Z" fill="#ef4444" opacity="0.3" stroke="#ef4444" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="6" fill="#ef4444"/>
+                        </svg>
+                    </div>
+                    <div class="ability-name-display">Volatile Concoction</div>
+                    <div class="ability-unlock-level">Level 3</div>
+                    
+                    <div class="ability-tooltip">
+                        <div class="tooltip-header">
+                            <h3 class="tooltip-title">VOLATILE CONCOCTION</h3>
+                            <p class="tooltip-unlock">Unlocks: Level 3</p>
+                        </div>
+                        <div class="tooltip-stats">
+                            <span class="tooltip-badge">Cost: 35 SE</span>
+                            <span class="tooltip-badge">Cooldown: 10s</span>
+                            <span class="tooltip-badge">Type: AoE Damage</span>
+                            <span class="tooltip-badge">Range: 20 blocks</span>
+                            <span class="tooltip-badge">Radius: 5 blocks</span>
+                        </div>
+                        <div class="tooltip-section">
+                            <h4 class="tooltip-section-title">What It Does:</h4>
+                            <p class="tooltip-section-text">Throw an explosive potion dealing <strong>200% Power</strong> as magic damage to all enemies in blast radius.</p>
+                        </div>
+                        <div class="tooltip-section">
+                            <h4 class="tooltip-section-title">How To Use:</h4>
+                            <p class="tooltip-section-text">Target location or enemy and cast. Potion arcs through air and explodes on impact. Great for hitting grouped enemies.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More abilities... -->
+                
+            </div>
+        </div>
+        
+        <div class="tier-navigation">
+            <button class="nav-button" onclick="location.href='alchemist-overview.html'">← Back to Alchemist</button>
+            <button class="nav-button" onclick="location.href='alchemist-t2.html'">Next: Mage →</button>
+        </div>
+        
+    </div>
+    
+    <script>
+        // SMART TOOLTIP POSITIONING - No overlap!
+        function showTooltip(event, card) {
+            const tooltip = card.querySelector('.ability-tooltip');
+            if (!tooltip) return;
+            
+            updateTooltipPosition(event, card);
+        }
+        
+        function updateTooltipPosition(event, card) {
+            const tooltip = card.querySelector('.ability-tooltip');
+            if (!tooltip) return;
+            
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+            const tooltipRect = tooltip.getBoundingClientRect();
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            
+            let left = mouseX + 20;
+            let top = mouseY + 20;
+            
+            // Prevent right overflow
+            if (left + tooltipRect.width > viewportWidth - 20) {
+                left = mouseX - tooltipRect.width - 20;
+            }
+            
+            // Prevent bottom overflow
+            if (top + tooltipRect.height > viewportHeight - 20) {
+                top = mouseY - tooltipRect.height - 20;
+                tooltip.setAttribute('data-position', 'top');
+            } else {
+                tooltip.setAttribute('data-position', 'bottom');
+            }
+            
+            // Prevent left overflow
+            if (left < 20) {
+                left = 20;
+            }
+            
+            // Prevent top overflow
+            if (top < 20) {
+                top = 20;
+            }
+            
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + 'px';
+        }
+        
+        function hideTooltip(card) {
+            const tooltip = card.querySelector('.ability-tooltip');
+            if (tooltip) {
+                tooltip.style.opacity = '0';
+                tooltip.style.transform = 'scale(0.95)';
+            }
+        }
+    </script>
+    
+</body>
+</html>

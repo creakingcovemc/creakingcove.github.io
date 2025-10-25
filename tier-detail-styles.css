@@ -1,0 +1,367 @@
+/* ==================== TIER DETAIL PAGE STYLES ==================== */
+.tier-detail-page {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at top, #14141f 0%, #0a0a0f 100%);
+    padding: 3rem 2rem 5rem;
+}
+
+.tier-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ==================== TIER HEADER ==================== */
+.tier-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.tier-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.tier-level-range {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.tier-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ==================== STATS DISPLAY ==================== */
+.stats-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: rgba(255,255,255,0.02);
+    border-radius: 0.75rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-name {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stat-progression {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+/* ==================== ABILITIES GRID ==================== */
+.abilities-section {
+    margin-bottom: 5rem;
+}
+
+.section-heading {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #fff, #a0a0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.abilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Ability Card with FIXED tooltip positioning */
+.ability-card {
+    position: relative;
+    background: rgba(255,255,255,0.03);
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ability-card:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.3);
+    transform: translateY(-5px);
+}
+
+/* SVG Icon Container */
+.ability-icon-svg {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(220,38,38,0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.ability-card:hover .ability-icon-svg {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(239,68,68,0.4);
+}
+
+.ability-name-display {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.ability-unlock-level {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ==================== SMART TOOLTIP POSITIONING ==================== */
+.ability-tooltip {
+    position: fixed;  /* Changed from absolute to fixed! */
+    width: 400px;
+    max-width: 90vw;
+    background: linear-gradient(135deg, #1e1e2e, #14141f);
+    border: 2px solid rgba(239,68,68,0.5);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    z-index: 9999;  /* Very high z-index */
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+}
+
+/* Show tooltip on hover */
+.ability-card:hover .ability-tooltip {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+/* Tooltip arrow */
+.ability-tooltip::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+/* Arrow positioning based on where tooltip appears */
+.ability-tooltip[data-position="bottom"]::before {
+    top: -10px;
+    left: 20px;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent rgba(239,68,68,0.5) transparent;
+}
+
+.ability-tooltip[data-position="top"]::before {
+    bottom: -10px;
+    left: 20px;
+    border-width: 10px 10px 0 10px;
+    border-color: rgba(239,68,68,0.5) transparent transparent transparent;
+}
+
+.tooltip-header {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.tooltip-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--alchemist-primary);
+    margin-bottom: 0.5rem;
+}
+
+.tooltip-unlock {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.tooltip-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tooltip-badge {
+    padding: 0.4rem 0.8rem;
+    background: rgba(239,68,68,0.2);
+    border: 1px solid rgba(239,68,68,0.3);
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.tooltip-section {
+    margin-bottom: 1rem;
+}
+
+.tooltip-section-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--alchemist-primary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tooltip-section-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.tooltip-section-text strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+/* ==================== PASSIVES SECTION ==================== */
+.passives-section {
+    margin-bottom: 5rem;
+}
+
+.passives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.passive-card {
+    background: linear-gradient(135deg, rgba(251,191,36,0.05), rgba(245,158,11,0.02));
+    border: 2px solid rgba(251,191,36,0.3);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    transition: all 0.3s;
+}
+
+.passive-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(251,191,36,0.2);
+}
+
+.passive-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.passive-icon-svg {
+    width: 60px;
+    height: 60px;
+    border-radius: 0.5rem;
+    background: linear-gradient(135deg, rgba(251,191,36,0.2), rgba(245,158,11,0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.passive-info h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--priest-primary);
+    margin-bottom: 0.25rem;
+}
+
+.passive-unlock {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.passive-effect {
+    margin-bottom: 1rem;
+}
+
+.passive-effect-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--priest-primary);
+    margin-bottom: 0.5rem;
+}
+
+.passive-effect-text {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.passive-effect-text strong {
+    color: var(--text-primary);
+}
+
+/* ==================== NAVIGATION ==================== */
+.tier-navigation {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+}
+
+.nav-button {
+    padding: 1rem 2rem;
+    background: rgba(255,255,255,0.05);
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav-button:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.3);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .abilities-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .passives-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ability-tooltip {
+        width: calc(100vw - 2rem);
+        left: 1rem !important;
+        right: 1rem !important;
+    }
+}

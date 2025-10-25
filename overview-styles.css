@@ -1,0 +1,422 @@
+/* ==================== OVERVIEW PAGE STYLES ==================== */
+.overview-page {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at top, #14141f 0%, #0a0a0f 100%);
+    padding: 3rem 2rem;
+}
+
+.overview-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ==================== HERO SECTION WITH PICTURE FRAME ==================== */
+.class-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 5rem;
+    align-items: center;
+}
+
+.hero-picture-frame {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    aspect-ratio: 2/1;
+    box-shadow: var(--shadow-xl);
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.frame-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid rgba(255,255,255,0.2);
+    border-radius: 1rem;
+    pointer-events: none;
+}
+
+.frame-glow {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 1rem;
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+}
+
+[data-class="alchemist"] .frame-glow {
+    background: linear-gradient(135deg, var(--alchemist-primary), var(--alchemist-secondary));
+    filter: blur(20px);
+}
+
+[data-class="mercenary"] .frame-glow {
+    background: linear-gradient(135deg, var(--mercenary-primary), var(--mercenary-secondary));
+    filter: blur(20px);
+}
+
+[data-class="thief"] .frame-glow {
+    background: linear-gradient(135deg, var(--thief-primary), var(--thief-secondary));
+    filter: blur(20px);
+}
+
+[data-class="priest"] .frame-glow {
+    background: linear-gradient(135deg, var(--priest-primary), var(--priest-secondary));
+    filter: blur(20px);
+}
+
+.hero-picture-frame:hover .frame-glow {
+    opacity: 0.6;
+}
+
+/* Hero Info */
+.hero-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.class-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+[data-class="alchemist"] .class-title {
+    background: linear-gradient(135deg, var(--alchemist-primary), #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-class="mercenary"] .class-title {
+    background: linear-gradient(135deg, var(--mercenary-primary), #60d9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-class="thief"] .class-title {
+    background: linear-gradient(135deg, var(--thief-primary), #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-class="priest"] .class-title {
+    background: linear-gradient(135deg, var(--priest-primary), #fcd34d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.class-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+/* Base Stats */
+.base-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.03);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+/* Unique Stat Box */
+.unique-stat-box {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(239,68,68,0.1), rgba(220,38,38,0.05));
+    border-radius: 0.75rem;
+    border: 2px solid rgba(239,68,68,0.3);
+}
+
+[data-class="mercenary"] .unique-stat-box {
+    background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(0,128,204,0.05));
+    border-color: rgba(0,212,255,0.3);
+}
+
+[data-class="thief"] .unique-stat-box {
+    background: linear-gradient(135deg, rgba(168,85,247,0.1), rgba(124,58,237,0.05));
+    border-color: rgba(168,85,247,0.3);
+}
+
+[data-class="priest"] .unique-stat-box {
+    background: linear-gradient(135deg, rgba(251,191,36,0.1), rgba(245,158,11,0.05));
+    border-color: rgba(251,191,36,0.3);
+}
+
+.unique-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.unique-name {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--alchemist-primary);
+    margin-bottom: 0.5rem;
+}
+
+[data-class="mercenary"] .unique-name {
+    color: var(--mercenary-primary);
+}
+
+[data-class="thief"] .unique-name {
+    color: var(--thief-primary);
+}
+
+[data-class="priest"] .unique-name {
+    color: var(--priest-primary);
+}
+
+.unique-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ==================== CLASS DESCRIPTION ==================== */
+.class-description-section {
+    margin-bottom: 5rem;
+}
+
+.class-description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255,255,255,0.02);
+    border-radius: 0.75rem;
+}
+
+/* ==================== EVOLUTION TIMELINE ==================== */
+.evolution-timeline {
+    margin-bottom: 5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 4rem;
+    background: linear-gradient(135deg, #fff, #a0a0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.timeline-track {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline-node {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s;
+    padding: 2rem 1rem;
+    border-radius: 0.75rem;
+    background: rgba(255,255,255,0.02);
+    border: 2px solid transparent;
+}
+
+.timeline-node:hover {
+    background: rgba(255,255,255,0.05);
+    transform: translateY(-10px);
+}
+
+[data-class="alchemist"] .timeline-node:hover {
+    border-color: var(--alchemist-primary);
+    box-shadow: 0 10px 40px rgba(239,68,68,0.3);
+}
+
+[data-class="mercenary"] .timeline-node:hover {
+    border-color: var(--mercenary-primary);
+    box-shadow: 0 10px 40px rgba(0,212,255,0.3);
+}
+
+[data-class="thief"] .timeline-node:hover {
+    border-color: var(--thief-primary);
+    box-shadow: 0 10px 40px rgba(168,85,247,0.3);
+}
+
+[data-class="priest"] .timeline-node:hover {
+    border-color: var(--priest-primary);
+    box-shadow: 0 10px 40px rgba(251,191,36,0.3);
+}
+
+.node-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(220,38,38,0.1));
+    border: 3px solid var(--alchemist-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.4s;
+}
+
+[data-class="mercenary"] .node-circle {
+    background: linear-gradient(135deg, rgba(0,212,255,0.2), rgba(0,128,204,0.1));
+    border-color: var(--mercenary-primary);
+}
+
+[data-class="thief"] .node-circle {
+    background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(124,58,237,0.1));
+    border-color: var(--thief-primary);
+}
+
+[data-class="priest"] .node-circle {
+    background: linear-gradient(135deg, rgba(251,191,36,0.2), rgba(245,158,11,0.1));
+    border-color: var(--priest-primary);
+}
+
+.timeline-node:hover .node-circle {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px currentColor;
+}
+
+.node-icon {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--alchemist-primary);
+}
+
+[data-class="mercenary"] .node-icon {
+    color: var(--mercenary-primary);
+}
+
+[data-class="thief"] .node-icon {
+    color: var(--thief-primary);
+}
+
+[data-class="priest"] .node-icon {
+    color: var(--priest-primary);
+}
+
+.node-content {
+    flex: 1;
+}
+
+.node-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.node-levels {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.node-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.timeline-connector {
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0.2) 0%, 
+        rgba(255,255,255,0.1) 50%, 
+        rgba(255,255,255,0.2) 100%
+    );
+    align-self: center;
+    margin-top: -80px;
+}
+
+/* ==================== CTA SECTION ==================== */
+.cta-section {
+    text-align: center;
+    padding: 2rem;
+}
+
+.cta-text {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+    .class-hero {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .timeline-track {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .timeline-connector {
+        width: 3px;
+        height: 40px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .base-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .overview-page {
+        padding: 2rem 1rem;
+    }
+}
